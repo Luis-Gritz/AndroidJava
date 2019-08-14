@@ -17,28 +17,30 @@
         android:textAlignment="center"/>
 
     <EditText
-        android:id="@+id/editValorConta"
+        android:id="@+id/editValor"
         android:inputType="numberDecimal"
         android:hint="Digite o valor da conta"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:id="@+id/editValorPessoas"
-        android:inputType="number"
-        android:hint="Digite o número de pessoas"
-        android:textAlignment="center"
+    <SeekBar
+        android:id="@+id/seekPessoas"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:min="1"
+        android:max="20"
+        android:progress="1" />
 
-    <Button
-        android:onClick="calcula_conta"
-        android:layout_marginTop="30dp"
-        android:text="Calcular Conta"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/textPessoas"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
     <TextView
         android:layout_marginTop="30dp"
@@ -49,7 +51,7 @@
         android:textStyle="bold"
         android:textAlignment="center"/>
     <TextView
-        android:id="@+id/textValor"
+        android:id="@+id/textDivisao"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

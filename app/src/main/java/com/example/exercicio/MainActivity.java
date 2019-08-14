@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText valorPessoas;
-    private EditText valorConta;
-    private TextView textValor;
+    private EditText editValor;
+    private TextView textDivisao, textPessoas;
+    private SeekBar seekPessoas;
 
 
     @Override
@@ -21,12 +22,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        valorPessoas = findViewById(R.id.editValorPessoas);
-        valorConta = findViewById(R.id.editValorConta);
-        textValor = findViewById(R.id.textValor);
+        editValor = findViewById(R.id.editValor);
+        textPessoas = findViewById(R.id.textPessoas);
+        textDivisao = findViewById(R.id.textDivisao);
+        seekPessoas = findViewById(R.id.seekPessoas);
+
+        seekPessoas.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                textPessoas.setText(String.valueOf(i));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+
+            }
+        });
     }
 
-    public void calcula_conta(View view) {
+    /*public void calcula_conta(View view) {
 
         String valorTextPessoa = valorPessoas.getText().toString();
         String valorTextConta = valorConta.getText().toString();
@@ -39,5 +59,5 @@ public class MainActivity extends AppCompatActivity {
         String formatado = "R$" + df.format(result);
 
         textValor.setText(formatado);
-    }
+    }*/
 }
